@@ -10,9 +10,11 @@ interface CardProps {
     height?: string;
     children?: React.ReactNode; // отрисовывает то, что мы помещаем в <Card>
     variant: CardVariant;
+    onClick: (num: number) => void; // void если функция ничего не возращает
 }
 
-const Card: FC<CardProps> = ({ width, height, children, variant }) => {
+const Card: FC<CardProps> = ({ width, height, children, variant, onClick }) => {
+    const [state, setState] = React.useState(0);
     return (
         <div
             style={{
@@ -24,6 +26,7 @@ const Card: FC<CardProps> = ({ width, height, children, variant }) => {
                         : 'none',
                 background: variant === CardVariant.primary ? 'lightgray' : '',
             }}
+            onClick={() => onClick(state)}
         >
             {children}
         </div>
