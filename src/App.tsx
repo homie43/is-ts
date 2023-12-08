@@ -1,8 +1,10 @@
-import Card from './components/Card';
+import Card, { CardVariant } from './components/Card';
 const App = () => {
     return (
         <div>
-            <Card height='150px' width='150px' />
+            <Card variant={CardVariant.outlined} height='150px' width='150px'>
+                <button>Кнопка</button>
+            </Card>
         </div>
     );
 };
