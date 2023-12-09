@@ -13,7 +13,6 @@ const UserItem: React.FC<UserItemProps> = ({ user }) => {
                 padding: 15,
                 border: '3px solid gray',
             }}
-            key={user.id}
         >
             {user.name} живет в {user.address.city} на улице{' '}
             {user.address.street}
